@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator cen paliw</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <h1>Oblicz koszt paliwa</h1>
+  <fieldset>
+    <div>
+      <input type="radio" id="a" name="jd" checked>
+      <label for="huey">Benzyna</label>
+    </div>
+
+    <div>
+      <input type="radio" id="b" name="jd" checked>
+      <label for="dewey">Ropa</label>
+    </div>
+    <label>Ile litrów:</br><input type="number" id="c"> </label> </br></br>
+  </fieldset>
+  <input id="abc" type="button" value="OBLICZ" onclick="paliwo()">
+
+  <div id="wynik"></div>
+  <script>
+
+    function paliwo() {
+      var a = document.getElementById("a");
+      var b = document.getElementById("b");
+      var c = document.getElementById("c").value;
+
+      if (a.checked === true) {
+        var typ = 6.70;
+        var suma = typ * c;
+        document.getElementById("wynik").innerHTML = "Koszt paliwa to " + suma + " zł";
+      }
+
+      else if (a.checked === false) {
+        var typ = 7.5;
+        var suma = typ * c;
+
+        document.getElementById("wynik").innerHTML = "Koszt paliwa to " + suma + " zł";
+
+      }
+      else {
+
+        document.getElementById("wynik").innerHTML = "Koszt paliwa 0 zł";
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
